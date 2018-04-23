@@ -1,0 +1,9 @@
+C:\Tetris\TetrisSchool\TetrisSchool\bin\Debug\TetrisSchool.exe.config
+C:\Tetris\TetrisSchool\TetrisSchool\bin\Debug\TetrisSchool.exe
+C:\Tetris\TetrisSchool\TetrisSchool\bin\Debug\TetrisSchool.pdb
+C:\Tetris\TetrisSchool\TetrisSchool\obj\Debug\TetrisSchool.csprojResolveAssemblyReference.cache
+C:\Tetris\TetrisSchool\TetrisSchool\obj\Debug\TetrisSchool.Form1.resources
+C:\Tetris\TetrisSchool\TetrisSchool\obj\Debug\TetrisSchool.Properties.Resources.resources
+C:\Tetris\TetrisSchool\TetrisSchool\obj\Debug\TetrisSchool.csproj.GenerateResource.Cache
+C:\Tetris\TetrisSchool\TetrisSchool\obj\Debug\TetrisSchool.exe
+C:\Tetris\TetrisSchool\TetrisSchool\obj\Debug\TetrisSchool.pdb
