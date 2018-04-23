@@ -8,20 +8,20 @@ namespace TetrisSchool
 {
     class Board
     {
-        private static int numRows = 18;
-        private static int numCols = 10;
-        public int[,] grid = new int[numRows, numCols];
+        private static int anzReihe = 18;
+        private static int anzSpalte = 10;
+        public int[,] grid = new int[anzReihe, anzSpalte];
         public int boardColor;
-        public int rowsCompleted { get; set; }
-        public int currentLevel { get; set; }
+        public int reiheBeendet { get; set; }
+        //public int currentLevel { get; set; }
         public int score { get; set; }
         public Block currentBlock;
         public Coordinate coord;
 
         public Board()
         {
-            this.rowsCompleted = 0;
-            this.currentLevel = 1;
+            this.reiheBeendet = 0;
+            //this.currentLevel = 1;
             this.score = 0;
             this.currentBlock = new Block();
             this.coord = new Coordinate(0, 0);
@@ -35,7 +35,7 @@ namespace TetrisSchool
         {
             if (this.currentBlock.currBlock == null || !this.canDrop())
             {
-                this.spawnNewBlock();
+                this.spawnNeueBlock();
                 return this.isFirstMovePossible();
             }
             this.lowerCurrentBlock();
@@ -46,18 +46,20 @@ namespace TetrisSchool
         /// <summary>
         /// spawn the next tetromino 
         /// </summary>
-        private void spawnNewBlock()
+        private void spawnNeueBlock()
         {
             // lock the last falling block where it fell
             this.lockLastBlock();
             this.currentBlock.getNextBlock();
         }
 
-        private void maybeUpdateLevel()
-        {
-            if (this.rowsCompleted % 10 == 0)
-                this.currentLevel++;
-        }
+        //private void maybeUpdateLevel()
+        //{
+        //    if (this.reiheBeendet % 10 == 0)
+        //    {
+        //        //this.currentLevel++;
+        //    }
+        //}
 
         public bool isFirstMovePossible()
         {
@@ -262,30 +264,27 @@ namespace TetrisSchool
         /// Check if a row is full
         /// </summary>
         /// <param name="currentRow"></param>
-        private bool isFullRow(int currentRow)
+        private bool istReiheVoll(int currentRow)
         {
-            for (int col = 0; col < numCols; col++)
+            for (int spalte = 0; spalte < anzSpalte; spalte++)
             {
-                if (this.grid[currentRow, col] == this.boardColor)
+                if (this.grid[currentRow, spalte] == this.boardColor)
                     return false;
             }
             return true;
         }
 
-        /// <summary>
-        /// Removes a completed row
-        /// </summary>
-        /// <param name="removedRow"></param>
+        
         private void removeRow(int removedRow)
         {
-            for (int row = removedRow; row > 0; row--)
+            for (int reihe = removedRow; reihe > 0; reihe--)
             {
-                for (int col = 0; col < numCols; col++)
+                for (int col = 0; col < anzSpalte; col++)
                 {
-                    if (row - 1 <= 0)
-                        this.grid[row, col] = this.boardColor;
+                    if (reihe - 1 <= 0)
+                        this.grid[reihe, col] = this.boardColor;
                     else
-                        this.grid[row, col] = this.grid[row - 1, col];
+                        this.grid[reihe, col] = this.grid[reihe - 1, col];
                 }
             }
         }
@@ -296,9 +295,9 @@ namespace TetrisSchool
         private void colorCodeBoard()
         {
             this.boardColor = Convert.ToInt32("FF4682B4", 16);
-            for (int i = 0; i < numRows; i++)
+            for (int i = 0; i < anzReihe; i++)
             {
-                for (int j = 0; j < numCols; j++)
+                for (int j = 0; j < anzSpalte; j++)
                 {
                     grid[i, j] = this.boardColor;
                 }
