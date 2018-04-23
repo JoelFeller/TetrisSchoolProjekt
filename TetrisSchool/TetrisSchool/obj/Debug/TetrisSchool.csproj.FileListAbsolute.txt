@@ -8,3 +8,13 @@ D:\Tetris\TetrisSchool\TetrisSchool\obj\Debug\TetrisSchool.csproj.GenerateResour
 D:\Tetris\TetrisSchool\TetrisSchool\obj\Debug\TetrisSchool.csproj.CoreCompileInputs.cache
 D:\Tetris\TetrisSchool\TetrisSchool\obj\Debug\TetrisSchool.exe
 D:\Tetris\TetrisSchool\TetrisSchool\obj\Debug\TetrisSchool.pdb
+D:\TetrisSchoolProjekt\TetrisSchool\TetrisSchool\bin\Debug\TetrisSchool.exe.config
+D:\TetrisSchoolProjekt\TetrisSchool\TetrisSchool\bin\Debug\TetrisSchool.exe
+D:\TetrisSchoolProjekt\TetrisSchool\TetrisSchool\bin\Debug\TetrisSchool.pdb
+D:\TetrisSchoolProjekt\TetrisSchool\TetrisSchool\obj\Debug\TetrisSchool.csprojResolveAssemblyReference.cache
+D:\TetrisSchoolProjekt\TetrisSchool\TetrisSchool\obj\Debug\TetrisSchool.Form1.resources
+D:\TetrisSchoolProjekt\TetrisSchool\TetrisSchool\obj\Debug\TetrisSchool.Properties.Resources.resources
+D:\TetrisSchoolProjekt\TetrisSchool\TetrisSchool\obj\Debug\TetrisSchool.csproj.GenerateResource.Cache
+D:\TetrisSchoolProjekt\TetrisSchool\TetrisSchool\obj\Debug\TetrisSchool.csproj.CoreCompileInputs.cache
+D:\TetrisSchoolProjekt\TetrisSchool\TetrisSchool\obj\Debug\TetrisSchool.exe
+D:\TetrisSchoolProjekt\TetrisSchool\TetrisSchool\obj\Debug\TetrisSchool.pdb
