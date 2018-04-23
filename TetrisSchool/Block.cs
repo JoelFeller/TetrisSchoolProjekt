@@ -13,22 +13,23 @@ namespace TetrisSchool
         public Int32 blockColor { get; set; }
         private static readonly int numShape = 7;
         public bool[][,] blockConfig = new bool[numShape][,];
-        public bool[,] currBlock;
+        public bool[,] momBlock;
         Random rand = new Random();
         private Int32[] setzeFarbe;
+        
         public Block()
         {
             this.bestimmeForm();
             this.setzeFarbe = this.getSetzeFarbe();
-            this.getNextBlock();
+            this.holeNaechsterBlock();
         }
-        public void getNextBlock()
+        public void holeNaechsterBlock()
         {
             int randomBlock = rand.Next(7);
             int startPos = rand.Next(6);
             this.x = startPos;
             this.y = 0;
-            this.currBlock = this.blockConfig[randomBlock];
+            this.momBlock = this.blockConfig[randomBlock];
             this.blockColor = this.setzeFarbe[randomBlock];
         }
         public Coordinate toBoardCoord(Coordinate coord)
@@ -41,7 +42,7 @@ namespace TetrisSchool
         {
             return (Block)this.MemberwiseClone();
         }
-        public void rotateClockwise()
+        public void drehenUhrzeiger()
         {
             bool[,] newArray = new bool[4, 4];
 
@@ -49,16 +50,16 @@ namespace TetrisSchool
             {
                 for (int j = 0; j < 4; j++)
                 {
-                    newArray[j, 3 - i] = this.currBlock[i, j];
+                    newArray[j, 3 - i] = this.momBlock[i, j];
                 }
             }
-            this.currBlock = newArray;
+            this.momBlock = newArray;
         }
-        public void rotateCounterClockwise()
+        public void drehenGegenUhrzeiger()
         {
-            this.rotateClockwise();
-            this.rotateClockwise();
-            this.rotateClockwise();
+            this.drehenUhrzeiger();
+            this.drehenUhrzeiger();
+            this.drehenUhrzeiger();
         }
         private void bestimmeForm()
         {
