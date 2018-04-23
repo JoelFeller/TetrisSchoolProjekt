@@ -11,7 +11,7 @@ namespace TetrisSchool
         private static int anzReihe = 18;
         private static int anzSpalte = 10;
         public int[,] grid = new int[anzReihe, anzSpalte];
-        public int boardColor;
+        public int boardFarbe;
         public int reiheBeendet { get; set; }
         //public int currentLevel { get; set; }
         public int score { get; set; }
@@ -27,13 +27,11 @@ namespace TetrisSchool
             this.coord = new Coordinate(0, 0);
             this.colorCodeBoard();
         }
-
-        /// <summary>
-        /// board timer
-        /// </summary>
+        
+        /// Timer for the game
         public bool tick()
         {
-            if (this.currentBlock.currBlock == null || !this.canDrop())
+            if (this.currentBlock.momBlock == null || !this.canDrop())
             {
                 this.spawnNeueBlock();
                 return this.isFirstMovePossible();
@@ -42,16 +40,16 @@ namespace TetrisSchool
             this.checkFullRows();
             return true;
         }
+        
 
-        /// <summary>
-        /// spawn the next tetromino 
-        /// </summary>
+        /// spawn the next Tetromino
         private void spawnNeueBlock()
         {
-            // lock the last falling block where it fell
-            this.lockLastBlock();
-            this.currentBlock.getNextBlock();
+            // put the last falling block in place
+            this.placeLastBlock();
+            this.currentBlock.holeNaechsterBlock();
         }
+
 
         //private void maybeUpdateLevel()
         //{
@@ -61,25 +59,28 @@ namespace TetrisSchool
         //    }
         //}
 
+        
         public bool isFirstMovePossible()
         {
             if (this.canDrop())
+            {
                 return true;
+            }
             return false;
         }
 
         public void lowerCurrentBlock()
         {
             if (this.canDrop())
+            {
                 this.currentBlock.y++;
+            }
         }
-
-        /// <summary>
+        
         /// Lock the last played block into position once it is done moving
-        /// </summary>
-        private void lockLastBlock()
+        private void placeLastBlock()
         {
-            if (currentBlock.currBlock != null)
+            if (currentBlock.momBlock != null)
             {
                 Coordinate c = null;
                 int dim = 4;
@@ -88,7 +89,7 @@ namespace TetrisSchool
                 {
                     for (int col = 0; col < dim; col++)
                     {
-                        if (currentBlock.currBlock[row, col])
+                        if (currentBlock.momBlock[row, col])
                         {
                             c = currentBlock.toBoardCoord(new Coordinate(col, row));
                             this.grid[c.y, c.x] = currentBlock.blockColor;
@@ -97,51 +98,42 @@ namespace TetrisSchool
                 }
             }
         }
-
-        /// <summary>
+        
         /// Move the current block left if possible
-        /// </summary>
         public void moveCurrentBlockLeft()
         {
             if (this.canMoveSideWays(true))
+            {
                 this.currentBlock.x--;
+            }
         }
-
-        /// <summary>
+        
         /// Moves the current block right if possible
-        /// </summary>
         public void moveCurrentBlockRight()
         {
             if (this.canMoveSideWays(false))
+            {
                 this.currentBlock.x++;
+            }
         }
-
-        /// <summary>
-        /// rotate the current block counter clockwise if possible
-        /// </summary>
-        public void rotateCurrentBlockCounterClockwise()
+        
+        /// If possible, rotate the current block clockwise or counter clockwise
+        public void dreheMomBlock()
         {
             if (this.canRotate(false))
-                this.currentBlock.rotateCounterClockwise();
+            {
+                this.currentBlock.drehenGegenUhrzeiger();
+            }
+            else if(this.canRotate(true))
+            {
+                this.currentBlock.drehenUhrzeiger();
+            }
         }
-
-        /// <summary>
-        /// rotate the current block clockwise if possible
-        /// </summary>
-        public void rotateCurrentBlockClockwise()
-        {
-            if (this.canRotate(true))
-                this.currentBlock.rotateClockwise();
-        }
-
-        /// <summary>
+        
         /// Returns true if the current block can move sideways else false
-        /// </summary>
-        /// <param name="left"></param>
-        /// <returns></returns>
         private bool canMoveSideWays(bool left)
         {
-            bool isMoveable = true;
+            bool bewegbar = true;
             Block whenMoved = currentBlock.Clone();
             if (left)
                 whenMoved.x--;
@@ -149,36 +141,35 @@ namespace TetrisSchool
                 whenMoved.x++;
 
             if (!canBeThere(whenMoved))
-                isMoveable = false;
+                bewegbar = false;
 
-            return isMoveable;
+            return bewegbar;
         }
-
-        /// <summary>
+        
         /// Returns true if the current block can rotate else false
-        /// </summary>
-        /// <param name="clockwise"></param>
-        /// <returns></returns>
-        private bool canRotate(bool clockwise)
+        private bool canRotate(bool uhrzeiger)
         {
-            bool isRotatable = true;
+            bool drehbar = true;
             Block whenRotated = currentBlock.Clone();
 
-            if (clockwise)
-                whenRotated.rotateClockwise();
+            if (uhrzeiger)
+            {
+                whenRotated.drehenUhrzeiger();
+            }
             else
-                whenRotated.rotateCounterClockwise();
+            {
+                whenRotated.drehenGegenUhrzeiger();
+            }
 
             if (!canBeThere(whenRotated))
-                isRotatable = false;
+            {
+                drehbar = false;
+            }
 
-            return isRotatable;
+            return drehbar;
         }
-
-        /// <summary>
+        
         /// Returns true if the current block can drop one row down else false
-        /// </summary>
-        /// <returns></returns>
         private bool canDrop()
         {
             bool canDrop = true;
@@ -186,120 +177,117 @@ namespace TetrisSchool
             ifDropped.y++;
 
             if (!canBeThere(ifDropped))
+            {
                 canDrop = false;
+            }
             return canDrop;
         }
-
-        /// <summary>
+        
         /// Returns true if the current block is allowed to make its next move else false
-        /// </summary>
-        /// <param name="ablock"></param>
-        /// <returns></returns>
         private bool canBeThere(Block ablock)
         {
-            bool isMoveable = true;
+            bool bewegbar = true;
             int dim = 4;
 
             for (int row = 0; row < dim; row++)
             {
                 for (int col = 0; col < dim; col++)
                 {
-                    if (ablock.currBlock[row, col])
+                    if (ablock.momBlock[row, col])
                     {
                         Coordinate c = ablock.toBoardCoord(new Coordinate(col, row));
-                        if (isOccupiedCell(c) || c.x >= numCols || c.x < 0 || c.y >= numRows)
-                            isMoveable = false;
+                        if (isOccupiedCell(c) || c.x >= anzSpalte || c.x < 0 || c.y >= anzReihe)
+                        {
+                            bewegbar = false;
+                        }
                     }
                 }
             }
-            return isMoveable;
+            return bewegbar;
         }
-
-        /// <summary>
+        
         /// Returns true if a cell is occupied otherwise false
-        /// </summary>
-        /// <param name="c"></param>
-        /// <returns></returns>
         private bool isOccupiedCell(Coordinate c)
         {
-            if (c.x < numCols && c.x >= 0 && c.y < numRows && c.y >= 0 && this.grid[c.y, c.x] == this.boardColor)
+            if (c.x < anzSpalte && c.x >= 0 && c.y < anzReihe && c.y >= 0 && this.grid[c.y, c.x] == this.boardFarbe)
+            {
                 return false;
+            }
             return true;
         }
-
-        /// <summary>
-        /// Check all the board rows for completion
-        /// </summary>
+        
+        /// Check all the board rows for full rows
         private void checkFullRows()
         {
-            int numCompleted = 0;
-            int rowPoints = this.currentLevel * 100;
-            int rowBonus = this.currentLevel * 50;
-            for (int row = 0; row < numRows; row++)
+            int anzVolleReihe = 0;
+            //int rowPoints = this.currentLevel * 100;
+            //int rowBonus = this.currentLevel * 50;
+            for (int row = 0; row < anzReihe; row++)
             {
-                if (this.isFullRow(row))
+                if (this.istReiheVoll(row))
                 {
-                    this.removeRow(row);
-                    numCompleted++;
+                    this.entferneReihe(row);
+                    anzVolleReihe++;
                 }
             }
-            if (numCompleted > 0)
+            if (anzVolleReihe > 0)
             {
-                this.score += numCompleted * rowPoints + ((numCompleted - 1) * rowBonus);
-                this.updateRowsAndLevel(numCompleted);
+                this.score += anzVolleReihe /** rowPoints*/ + ((anzVolleReihe - 1) /** rowBonus*/);
+                this.updateRows(anzVolleReihe);
             }
         }
 
-        private void updateRowsAndLevel(int numCompleted)
+        private void updateRows(int anzVolleReihe)
         {
-            for (int i = 0; i < numCompleted; i++)
+            for (int i = 0; i < anzVolleReihe; i++)
             {
-                this.rowsCompleted++;
-                if (this.rowsCompleted % 10 == 0)
-                    this.currentLevel++;
+                this.reiheBeendet++;
+                if (this.reiheBeendet % 10 == 0)
+                {
+                    //this.currentLevel++;
+
+                }
             }
         }
 
-        /// <summary>
         /// Check if a row is full
-        /// </summary>
-        /// <param name="currentRow"></param>
-        private bool istReiheVoll(int currentRow)
+        private bool istReiheVoll(int momReihe)
         {
             for (int spalte = 0; spalte < anzSpalte; spalte++)
             {
-                if (this.grid[currentRow, spalte] == this.boardColor)
+                if (this.grid[momReihe, spalte] == this.boardFarbe)
+                {
                     return false;
+                }
             }
             return true;
         }
 
         
-        private void removeRow(int removedRow)
+        private void entferneReihe(int entfernteReihe)
         {
-            for (int reihe = removedRow; reihe > 0; reihe--)
+            for (int reihe = entfernteReihe; reihe > 0; reihe--)
             {
-                for (int col = 0; col < anzSpalte; col++)
+                for (int spalte = 0; spalte < anzSpalte; spalte++)
                 {
                     if (reihe - 1 <= 0)
-                        this.grid[reihe, col] = this.boardColor;
+                        this.grid[reihe, spalte] = this.boardFarbe;
                     else
-                        this.grid[reihe, col] = this.grid[reihe - 1, col];
+                        this.grid[reihe, spalte] = this.grid[reihe - 1, spalte];
                 }
             }
         }
-
-        /// <summary>
+        
+        /// Kind of like a hint that the game has started
         /// Gives the empty board its basic color
-        /// </summary>
         private void colorCodeBoard()
         {
-            this.boardColor = Convert.ToInt32("FF4682B4", 16);
+            this.boardFarbe = Convert.ToInt32("FF4682B4", 16);
             for (int i = 0; i < anzReihe; i++)
             {
                 for (int j = 0; j < anzSpalte; j++)
                 {
-                    grid[i, j] = this.boardColor;
+                    grid[i, j] = this.boardFarbe;
                 }
             }
         }
