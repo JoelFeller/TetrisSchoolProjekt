@@ -1,6 +1,6 @@
 ﻿namespace TetrisSchool
 {
-    partial class Form1
+    partial class Tetris
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tetris));
             this.lblPlayingfield = new System.Windows.Forms.Label();
             this.GameTick = new System.Windows.Forms.Timer(this.components);
             this.lblInstructions = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             // lblInstructions
             // 
             this.lblInstructions.BackColor = System.Drawing.Color.Silver;
-            this.lblInstructions.Location = new System.Drawing.Point(529, 471);
+            this.lblInstructions.Location = new System.Drawing.Point(538, 471);
             this.lblInstructions.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInstructions.Name = "lblInstructions";
             this.lblInstructions.Size = new System.Drawing.Size(106, 139);
@@ -70,7 +70,7 @@
             this.lblControls.Text = resources.GetString("lblControls.Text");
             this.lblControls.Click += new System.EventHandler(this.lblControls_Click);
             // 
-            // Form1
+            // Tetris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -80,8 +80,12 @@
             this.Controls.Add(this.lblInstructions);
             this.Controls.Add(this.lblPlayingfield);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Tetris";
+            this.Text = "Tetris";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tetris_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Tetris_KeyPress);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Tetris_KeyUp);
+            this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.Tetris_PreviewKeyDown);
             this.ResumeLayout(false);
 
         }

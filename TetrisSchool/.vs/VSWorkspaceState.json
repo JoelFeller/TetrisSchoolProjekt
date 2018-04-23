@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\Block.cs\\obj",
-    "\\Block.cs\\obj\\Release",
-    "\\TetrisSchool"
+    ""
   ],
-  "SelectedNode": "\\TetrisSchool.sln",
+  "SelectedNode": "\\Coordinate.cs",
   "PreviewInSolutionExplorer": false
 }

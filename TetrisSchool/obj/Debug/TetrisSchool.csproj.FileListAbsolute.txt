@@ -7,3 +7,12 @@ C:\Tetris\TetrisSchool\TetrisSchool\obj\Debug\TetrisSchool.Properties.Resources.
 C:\Tetris\TetrisSchool\TetrisSchool\obj\Debug\TetrisSchool.csproj.GenerateResource.Cache
 C:\Tetris\TetrisSchool\TetrisSchool\obj\Debug\TetrisSchool.exe
 C:\Tetris\TetrisSchool\TetrisSchool\obj\Debug\TetrisSchool.pdb
+C:\TetrisSchoolProjekt\TetrisSchool\bin\Debug\TetrisSchool.exe.config
+C:\TetrisSchoolProjekt\TetrisSchool\bin\Debug\TetrisSchool.exe
+C:\TetrisSchoolProjekt\TetrisSchool\bin\Debug\TetrisSchool.pdb
+C:\TetrisSchoolProjekt\TetrisSchool\obj\Debug\TetrisSchool.csprojResolveAssemblyReference.cache
+C:\TetrisSchoolProjekt\TetrisSchool\obj\Debug\TetrisSchool.Properties.Resources.resources
+C:\TetrisSchoolProjekt\TetrisSchool\obj\Debug\TetrisSchool.Tetris.resources
+C:\TetrisSchoolProjekt\TetrisSchool\obj\Debug\TetrisSchool.csproj.GenerateResource.Cache
+C:\TetrisSchoolProjekt\TetrisSchool\obj\Debug\TetrisSchool.exe
+C:\TetrisSchoolProjekt\TetrisSchool\obj\Debug\TetrisSchool.pdb

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TetrisSchool
 {
-    public partial class Form1 : Form
+    public partial class Tetris : Form
     {
-        public Form1()
+        public Tetris()
         {
             InitializeComponent();
         }
@@ -22,10 +22,24 @@ namespace TetrisSchool
 
         }
 
-        private void lblPlayingfield_Click(object sender, EventArgs e)
+        private void Tetris_KeyDown(object sender, KeyEventArgs e)
         {
 
         }
 
+        private void Tetris_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void Tetris_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void Tetris_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+
+        }
     }
 }
