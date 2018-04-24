@@ -25,15 +25,25 @@ namespace TetrisSchool
         public void evaluateKey(Keys key, Boolean pressed)
         {
             if (key == Keys.Left)
+            {
                 leftKeyPressed = pressed;
+            }
             else if (key == Keys.Right)
+            {
                 rightKeyPressed = pressed;
+            }
             else if (key == Keys.Down)
+            {
                 downKeyPressed = pressed;
+            }
             else if (key == Keys.Up)
+            {
                 upKeyPressed = pressed;
+            }
             else if (key == Keys.Space)
+            {
                 spaceKeyPressed = pressed;
+            }
         }
     }
 }
