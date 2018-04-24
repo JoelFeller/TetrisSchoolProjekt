@@ -15,7 +15,7 @@ namespace TetrisSchool
         public int reiheBeendet { get; set; }
         //public int currentLevel { get; set; }
         public int score { get; set; }
-        public Block currentBlock;
+        public Block momentanerBlock;
         public Coordinate coord;
 
         public Board()
@@ -23,7 +23,7 @@ namespace TetrisSchool
             this.reiheBeendet = 0;
             //this.currentLevel = 1;
             this.score = 0;
-            this.currentBlock = new Block();
+            this.momentanerBlock = new Block();
             this.coord = new Coordinate(0, 0);
             this.colorCodeBoard();
         }
@@ -31,7 +31,7 @@ namespace TetrisSchool
         /// Timer for the game
         public bool tick()
         {
-            if (this.currentBlock.momBlock == null || !this.canDrop())
+            if (this.momentanerBlock.momBlock == null || !this.canDrop())
             {
                 this.spawnNeueBlock();
                 return this.isFirstMovePossible();
@@ -47,7 +47,7 @@ namespace TetrisSchool
         {
             // put the last falling block in place
             this.placeLastBlock();
-            this.currentBlock.holeNaechsterBlock();
+            this.momentanerBlock.holeNaechsterBlock();
         }
 
 
@@ -73,14 +73,14 @@ namespace TetrisSchool
         {
             if (this.canDrop())
             {
-                this.currentBlock.y++;
+                this.momentanerBlock.y++;
             }
         }
         
         /// Lock the last played block into position once it is done moving
         private void placeLastBlock()
         {
-            if (currentBlock.momBlock != null)
+            if (momentanerBlock.momBlock != null)
             {
                 Coordinate c = null;
                 int dim = 4;
@@ -89,10 +89,10 @@ namespace TetrisSchool
                 {
                     for (int col = 0; col < dim; col++)
                     {
-                        if (currentBlock.momBlock[row, col])
+                        if (momentanerBlock.momBlock[row, col])
                         {
-                            c = currentBlock.toBoardCoord(new Coordinate(col, row));
-                            this.grid[c.y, c.x] = currentBlock.blockColor;
+                            c = momentanerBlock.toBoardCoord(new Coordinate(col, row));
+                            this.grid[c.y, c.x] = momentanerBlock.blockColor;
                         }
                     }
                 }
@@ -104,7 +104,7 @@ namespace TetrisSchool
         {
             if (this.canMoveSideWays(true))
             {
-                this.currentBlock.x--;
+                this.momentanerBlock.x--;
             }
         }
         
@@ -113,7 +113,7 @@ namespace TetrisSchool
         {
             if (this.canMoveSideWays(false))
             {
-                this.currentBlock.x++;
+                this.momentanerBlock.x++;
             }
         }
         
@@ -122,11 +122,11 @@ namespace TetrisSchool
         {
             if (this.canRotate(false))
             {
-                this.currentBlock.drehenGegenUhrzeiger();
+                this.momentanerBlock.drehenGegenUhrzeiger();
             }
             else if(this.canRotate(true))
             {
-                this.currentBlock.drehenUhrzeiger();
+                this.momentanerBlock.drehenUhrzeiger();
             }
         }
         
@@ -134,15 +134,20 @@ namespace TetrisSchool
         private bool canMoveSideWays(bool left)
         {
             bool bewegbar = true;
-            Block whenMoved = currentBlock.Clone();
+            Block whenMoved = momentanerBlock.Clone();
             if (left)
+            {
                 whenMoved.x--;
+            }
             else
+            {
                 whenMoved.x++;
+            }
 
             if (!canBeThere(whenMoved))
+            {
                 bewegbar = false;
-
+            }
             return bewegbar;
         }
         
@@ -150,7 +155,7 @@ namespace TetrisSchool
         private bool canRotate(bool uhrzeiger)
         {
             bool drehbar = true;
-            Block whenRotated = currentBlock.Clone();
+            Block whenRotated = momentanerBlock.Clone();
 
             if (uhrzeiger)
             {
@@ -173,7 +178,7 @@ namespace TetrisSchool
         private bool canDrop()
         {
             bool canDrop = true;
-            Block ifDropped = currentBlock.Clone();
+            Block ifDropped = momentanerBlock.Clone();
             ifDropped.y++;
 
             if (!canBeThere(ifDropped))
