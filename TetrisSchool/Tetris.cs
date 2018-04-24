@@ -141,22 +141,22 @@ namespace TetrisSchool
         private void updateGameBoard()
         {
             Cell cell;
-            for ( int row = 0; row < anzReihe; row++)
+            for ( int reihe = 0; reihe < anzReihe; reihe++)
             {
-                for (int col = 0; col < anzSpalte; col++)
+                for (int spalte = 0; spalte < anzSpalte; spalte++)
                 {
-                    boardCells.TryGetValue(cellKey(row, col), out cell);
-                    cell.cellColor = board.grid[row, col];
+                    boardCells.TryGetValue(cellKey(reihe, spalte), out cell);
+                    cell.cellColor = board.grid[reihe, spalte];
                 }
             }
             Block block = board.momentanerBlock;
-            for (int row = 0; row < block.momBlock.GetLength(0); row++)
+            for (int reihe = 0; reihe < block.momBlock.GetLength(0); reihe++)
             {
-                for (int col = 0; col < block.momBlock.GetLength(1); col++)
+                for (int spalte = 0; spalte < block.momBlock.GetLength(1); spalte++)
                 {
-                    Coordinate c = new Coordinate(col, row);
+                    Coordinate c = new Coordinate(spalte, reihe);
                     c = block.toBoardCoord(c);
-                    if (block.momBlock[row, col] && c.x >= 0 && c.x < anzSpalte && c.y < anzReihe)
+                    if (block.momBlock[reihe, spalte] && c.x >= 0 && c.x < anzSpalte && c.y < anzReihe)
                     {
                         boardCells.TryGetValue(cellKey(c.y, c.x), out cell);
 
