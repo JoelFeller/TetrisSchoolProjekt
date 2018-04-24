@@ -63,14 +63,53 @@ namespace TetrisSchool
         }
         private void bestimmeForm()
         {
-
-            bool[,] geradeLinie = new bool[4, 4] { { false, true, false, false }, { false, true, false, false }, { false, true, false, false }, { false, true, false, false } };
-            bool[,] linkerBlitz = new bool[4, 4] { { false, false, false, false }, { true, true, false, false }, { false, true, true, false }, { false, false, false, false } };
-            bool[,] rechterBlitz = new bool[4, 4] { { false, false, false, false }, { false, false, true, true }, { false, true, true, false }, { false, false, false, false } };
-            bool[,] dreieck = new bool[4, 4] { { false, false, true, false }, { false, true, true, false }, { false, false, true, false }, { false, false, false, false } };
-            bool[,] rechtesL = new bool[4, 4] { { false, false, false, false }, { false, true, true, false }, { false, false, true, false }, { false, false, true, false } };
-            bool[,] linkesL = new bool[4, 4] { { false, false, false, false }, { false, true, true, false }, { false, true, false, false }, { false, true, false, false } };
-            bool[,] viereck = new bool[4, 4] { { false, false, false, false }, { false, true, true, false }, { false, true, true, false }, { false, false, false, false } };
+            //
+            //
+            //
+            //
+            bool[,] geradeLinie = new bool[4, 4] { { false, true, false, false }, 
+                                                   { false, true, false, false }, 
+                                                   { false, true, false, false }, 
+                                                   { false, true, false, false } };
+            ////
+             ////
+            bool[,] linkerBlitz = new bool[4, 4] { { false, false, false, false }, 
+                                                   {  true,  true, false, false }, 
+                                                   { false,  true,  true, false }, 
+                                                   { false, false, false, false } };
+               ////
+            ////
+            bool[,] rechterBlitz = new bool[4, 4] { { false, false, false, false },
+                                                    { false, false,  true,  true }, 
+                                                    { false,  true,  true, false }, 
+                                                    { false, false, false, false } };
+                //
+             ////
+              //
+            bool[,] dreieck = new bool[4, 4] { { false, false,  true, false }, 
+                                               { false,  true,  true, false }, 
+                                               { false, false,  true, false }, 
+                                               { false, false, false, false } };
+            ////
+             //
+            //
+            bool[,] rechtesL = new bool[4, 4] { { false, false, false, false }, 
+                                                { false,  true,  true, false }, 
+                                                { false, false,  true, false }, 
+                                                { false, false,  true, false } };
+              ////
+             //
+            //
+            bool[,] linkesL = new bool[4, 4] { { false, false, false, false }, 
+                                               { false,  true,  true, false }, 
+                                               { false,  true, false, false }, 
+                                               { false,  true, false, false } };
+             ////
+            ////
+            bool[,] viereck = new bool[4, 4] { { false, false, false, false }, 
+                                               { false,  true,  true, false }, 
+                                               { false,  true,  true, false }, 
+                                               { false, false, false, false } };
 
 
             for (int i = 0; i < numShape; i++)
