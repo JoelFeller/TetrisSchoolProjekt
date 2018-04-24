@@ -12,17 +12,17 @@ namespace TetrisSchool
 {
     public partial class Cell : UserControl
     {
-        public int reihe { get; set; }
-        public int spalte { get; set; }
+        public int row { get; set; }
+        public int col { get; set; }
 
-        public Cell(int reihe, int spalte)
+        public Cell(int row, int col)
         {
             InitializeComponent();
-            this.Name = reihe.ToString() + ", " + spalte.ToString();
-            this.reihe = reihe;
-            this.spalte = spalte;
+            this.Name = row.ToString() + ", " + col.ToString();
+            this.row = row;
+            this.col = col;
         }
-        
+
         public int cellColor
         {
             set
@@ -37,7 +37,7 @@ namespace TetrisSchool
             ControlPaint.DrawBorder(e.Graphics, ClientRectangle, Color.Black, 1, ButtonBorderStyle.Inset
                 , Color.Black, 1, ButtonBorderStyle.Inset
                 , Color.Black, 1, ButtonBorderStyle.Inset
-                ,Color.Black, 1, ButtonBorderStyle.Inset);
+                , Color.Black, 1, ButtonBorderStyle.Inset);
         }
     }
 }
