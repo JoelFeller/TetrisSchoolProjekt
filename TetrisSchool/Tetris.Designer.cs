@@ -60,7 +60,8 @@
             // 
             this.labelGameOver.AutoSize = true;
             this.labelGameOver.Font = new System.Drawing.Font("Microsoft YaHei UI", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGameOver.Location = new System.Drawing.Point(37, 71);
+            this.labelGameOver.ForeColor = System.Drawing.Color.Red;
+            this.labelGameOver.Location = new System.Drawing.Point(41, 89);
             this.labelGameOver.Name = "labelGameOver";
             this.labelGameOver.Size = new System.Drawing.Size(578, 128);
             this.labelGameOver.TabIndex = 28;
