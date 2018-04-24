@@ -28,7 +28,6 @@ namespace TetrisSchool
         private Board board;
         private KeyboardInput input = new KeyboardInput();
         private Dictionary<string, Cell> boardCells = new Dictionary<string, Cell>();
-        
         /// Default contructor for the Tetris class
         public Tetris()
         {
@@ -39,6 +38,7 @@ namespace TetrisSchool
             this.currentTickInterval = this.baseTickInterval;
             this.board = new Board();
             this.drawBackgroundBoard();
+            this.KeyPreview = true;
             
         }
         

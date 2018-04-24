@@ -14,7 +14,7 @@ namespace TetrisSchool
         public bool rightKeyPressed { get; set; }
         public bool leftKeyPressed { get; set; }
         public bool spaceKeyPressed { get; set; }
-        public bool escKeyPressed { get; set; }
+        public bool escKeyPressed { get; set; } 
 
         public KeyboardInput()
         {
