@@ -59,11 +59,13 @@
             // labelGameOver
             // 
             this.labelGameOver.AutoSize = true;
-            this.labelGameOver.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGameOver.Location = new System.Drawing.Point(51, 127);
+            this.labelGameOver.Font = new System.Drawing.Font("Microsoft YaHei UI", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGameOver.Location = new System.Drawing.Point(37, 71);
             this.labelGameOver.Name = "labelGameOver";
-            this.labelGameOver.Size = new System.Drawing.Size(0, 28);
+            this.labelGameOver.Size = new System.Drawing.Size(578, 128);
             this.labelGameOver.TabIndex = 28;
+            this.labelGameOver.Text = "YOU LOSE!";
+            this.labelGameOver.Visible = false;
             // 
             // textBoxHighScore
             // 

@@ -166,9 +166,9 @@ namespace TetrisSchool
         /// Takes the appropriate actions when the game is over
         private void gameOver()
         {
+            labelGameOver.Visible = true;
             this.gameTick.Enabled = false;
             this.playing = false;
-            this.labelGameOver.Text = "YOU LOSE!";
             if (this.board.score > this.highScore)
             {
                 this.highScore = this.board.score;

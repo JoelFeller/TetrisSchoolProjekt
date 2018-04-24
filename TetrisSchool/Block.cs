@@ -73,15 +73,15 @@ namespace TetrisSchool
                                                    { false, true, false, false } };
             ////
              ////
-            bool[,] linkerBlitz = new bool[4, 4] { { false, false, false, false }, 
-                                                   {  true,  true, false, false }, 
+            bool[,] linkerBlitz = new bool[4, 4] { {  true,  true, false, false }, 
                                                    { false,  true,  true, false }, 
+                                                   { false, false, false, false }, 
                                                    { false, false, false, false } };
                ////
             ////
-            bool[,] rechterBlitz = new bool[4, 4] { { false, false, false, false },
-                                                    { false, false,  true,  true }, 
+            bool[,] rechterBlitz = new bool[4, 4] { { false, false,  true,  true },
                                                     { false,  true,  true, false }, 
+                                                    { false, false, false, false }, 
                                                     { false, false, false, false } };
 
                //
@@ -113,9 +113,9 @@ namespace TetrisSchool
 
             //
             bool[,] tnt = new bool[4, 4] { { false,  true, false, false },
-                                                { false, false, false, false },
-                                                { false, false, false, false },
-                                                { false, false, false, false } };
+                                           { false, false, false, false },
+                                           { false, false, false, false },
+                                           { false, false, false, false } };
             for (int i = 0; i < numShape; i++)
                 blockConfig[i] = new bool[4, 4];
 
@@ -134,8 +134,8 @@ namespace TetrisSchool
         private Int32[] getSetzeFarbe()
         {
             Int32 blau = Convert.ToInt32("0xFF3F47CC", 16);
-            Int32 gelb = Convert.ToInt32("0xFFFFFA28", 16);
-            Int32 gruen = Convert.ToInt32("0xFF4FFF28", 16);
+            Int32 gelb = Convert.ToInt32("0xFFF4F000", 16);
+            Int32 gruen = Convert.ToInt32("0xFF3ADD16", 16);
             Int32 violet = Convert.ToInt32("0xFFA349A3", 16);
             Int32 rot = Convert.ToInt32("0xFFED1B24", 16);
             Int32 orange = Convert.ToInt32("0xFFFF7F26", 16);
