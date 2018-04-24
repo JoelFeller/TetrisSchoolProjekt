@@ -29,46 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tetris));
-            this.lblPlayingfield = new System.Windows.Forms.Label();
             this.GameTick = new System.Windows.Forms.Timer(this.components);
-            this.lblInstructions = new System.Windows.Forms.Label();
-            this.lblControls = new System.Windows.Forms.Label();
+            this.gameGrid = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // lblPlayingfield
+            // gameGrid
             // 
-            this.lblPlayingfield.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.lblPlayingfield.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblPlayingfield.Image = ((System.Drawing.Image)(resources.GetObject("lblPlayingfield.Image")));
-            this.lblPlayingfield.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lblPlayingfield.Location = new System.Drawing.Point(10, 11);
-            this.lblPlayingfield.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPlayingfield.Name = "lblPlayingfield";
-            this.lblPlayingfield.Size = new System.Drawing.Size(406, 600);
-            this.lblPlayingfield.TabIndex = 0;
-            // 
-            // lblInstructions
-            // 
-            this.lblInstructions.BackColor = System.Drawing.Color.Silver;
-            this.lblInstructions.Location = new System.Drawing.Point(538, 471);
-            this.lblInstructions.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblInstructions.Name = "lblInstructions";
-            this.lblInstructions.Size = new System.Drawing.Size(106, 139);
-            this.lblInstructions.TabIndex = 1;
-            this.lblInstructions.Text = "Controls:\r\n\r\nArrow Up or W:\r\nArrow Left or A:\r\nArrow Right or D:\r\nArrow Down or S" +
-    ":\r\nSpace:\r\nShift:\r\nEscape:";
-            // 
-            // lblControls
-            // 
-            this.lblControls.BackColor = System.Drawing.Color.Silver;
-            this.lblControls.Location = new System.Drawing.Point(629, 471);
-            this.lblControls.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblControls.Name = "lblControls";
-            this.lblControls.Size = new System.Drawing.Size(237, 139);
-            this.lblControls.TabIndex = 2;
-            this.lblControls.Text = resources.GetString("lblControls.Text");
-            this.lblControls.Click += new System.EventHandler(this.lblControls_Click);
+            this.gameGrid.Location = new System.Drawing.Point(298, 29);
+            this.gameGrid.Name = "gameGrid";
+            this.gameGrid.Size = new System.Drawing.Size(310, 558);
+            this.gameGrid.TabIndex = 8;
             // 
             // Tetris
             // 
@@ -76,9 +46,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(907, 617);
-            this.Controls.Add(this.lblControls);
-            this.Controls.Add(this.lblInstructions);
-            this.Controls.Add(this.lblPlayingfield);
+            this.Controls.Add(this.gameGrid);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Tetris";
             this.Text = "Tetris";
@@ -91,11 +59,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblPlayingfield;
         private System.Windows.Forms.Timer GameTick;
-        private System.Windows.Forms.Label lblInstructions;
-        private System.Windows.Forms.Label lblControls;
+        private System.Windows.Forms.Panel gameGrid;
     }
 }
 

@@ -111,7 +111,11 @@ namespace TetrisSchool
                                                { false,  true,  true, false }, 
                                                { false, false, false, false } };
 
-
+            //
+            bool[,] kViereck = new bool[4, 4] { { false, false, false, false },
+                                               { false,  true, false, false },
+                                               { false, false, false, false },
+                                               { false, false, false, false } };
             for (int i = 0; i < numShape; i++)
                 blockConfig[i] = new bool[4, 4];
 
