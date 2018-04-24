@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tetris));
             this.gameTick = new System.Windows.Forms.Timer(this.components);
             this.gameGrid = new System.Windows.Forms.Panel();
             this.labelGameOver = new System.Windows.Forms.Label();
@@ -40,6 +41,7 @@
             this.textBoxScore = new System.Windows.Forms.TextBox();
             this.buttonStart = new System.Windows.Forms.Button();
             this.buttonQuit = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.gameGrid.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,11 +61,11 @@
             // labelGameOver
             // 
             this.labelGameOver.AutoSize = true;
-            this.labelGameOver.Font = new System.Drawing.Font("Microsoft YaHei UI", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGameOver.ForeColor = System.Drawing.Color.Red;
-            this.labelGameOver.Location = new System.Drawing.Point(41, 89);
+            this.labelGameOver.Font = new System.Drawing.Font("Microsoft YaHei UI", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGameOver.ForeColor = System.Drawing.Color.Crimson;
+            this.labelGameOver.Location = new System.Drawing.Point(0, 131);
             this.labelGameOver.Name = "labelGameOver";
-            this.labelGameOver.Size = new System.Drawing.Size(578, 128);
+            this.labelGameOver.Size = new System.Drawing.Size(316, 70);
             this.labelGameOver.TabIndex = 28;
             this.labelGameOver.Text = "YOU LOSE!";
             this.labelGameOver.Visible = false;
@@ -154,12 +156,24 @@
             this.buttonQuit.UseVisualStyleBackColor = false;
             this.buttonQuit.Click += new System.EventHandler(this.buttonQuit_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(478, 47);
+            this.label3.MaximumSize = new System.Drawing.Size(425, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(413, 266);
+            this.label3.TabIndex = 28;
+            this.label3.Text = resources.GetString("label3.Text");
+            // 
             // Tetris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(907, 617);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonQuit);
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.textBoxHighScore);
@@ -195,6 +209,7 @@
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.Button buttonQuit;
         private System.Windows.Forms.Label labelGameOver;
+        private System.Windows.Forms.Label label3;
     }
 }
 

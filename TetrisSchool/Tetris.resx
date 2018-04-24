@@ -120,6 +120,20 @@
   <metadata name="gameTick.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="label3.Text" xml:space="preserve">
+    <value>INSTRUCTIONS:
+
+The main goal is to complete as much rows as you can while also getting the highest score!
+
+CONTROLS:
+
+ARROW KEY UP: Turns the Tetrominos clockwise(Uhrzeiger)
+ARROW KEY DOWN: Turns the Tetrominos counterclockwise(Gegenuhrzeiger)
+ARROW KEY LEFT/RIGHT: Moves the Tetrominos sideways.
+SPACEBAR: Lowers the Tetrominos
+
+START BUTTON / S: Starts a new game</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>39</value>
   </metadata>

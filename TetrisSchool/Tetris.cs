@@ -99,6 +99,7 @@ namespace TetrisSchool
         {
             if (playing)
             {
+                buttonStart.Enabled = false;
                 if (!board.tick())
                     this.gameOver();
                 this.updateGameBoard();
@@ -166,6 +167,7 @@ namespace TetrisSchool
         /// Takes the appropriate actions when the game is over
         private void gameOver()
         {
+            buttonStart.Enabled = true;
             labelGameOver.Visible = true;
             this.gameTick.Enabled = false;
             this.playing = false;
@@ -205,6 +207,10 @@ namespace TetrisSchool
                 {
                     board.dreheMomBlockGegenUhrzeiger();
                 }
+                if (input.escKeyPressed)
+                {
+                    Application.Exit();
+                }
                 this.updateGameBoard();
             }     
             input.evaluateKey(e.KeyCode, false);
@@ -233,23 +239,18 @@ namespace TetrisSchool
         {
             e.IsInputKey = true;
         }
-
-        /// <summary>
+        
         /// Processes the different keys used to play the game
-        /// </summary>
-        /// <param name="msg"></param>
-        /// <param name="keyData"></param>
-        /// <returns></returns>
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {            
             switch (keyData)
             {
-                case Keys.Home:
+                //case Keys.Home:
                     //this.increaseGameLevel();
-                    return true;
-                //case (Keys.Alt | Keys.S):
-                    //this.reset();
                     //return true;
+                case (Keys.S):
+                    this.reset();
+                    return true;
                 case Keys.Left:
                 case Keys.Right:
                 case Keys.Up:
@@ -258,19 +259,6 @@ namespace TetrisSchool
                     return true;
             } 
             return base.ProcessCmdKey(ref msg, keyData);
-        }
-
-        private void toolStripMenuItemHowToPlay_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Controls: Use Left & Right Arrow Keys to move sideways\n"
-                + "Use Up & Down arrow keys to rotate\n"
-                + "Press Space to drop the block\n"
-                + "\t\tEnjoy!", "How to Play", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void toolStripMenuItemAboutDev_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Just Another Lost Soul in a vast Ocean of Bits", "Who Am I?", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

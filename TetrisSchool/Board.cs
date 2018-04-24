@@ -31,6 +31,11 @@ namespace TetrisSchool
         /// Timer for the game
         public bool tick()
         {
+            //if (this.momentanerBlock.momBlock == null || !this.canDrop() || this.momentanerBlock.momBlock != alteBlock)
+            //{
+            //    this.spawnNeueBlock();
+            //    return this.isFirstMovePossible();
+            //}
             if (this.momentanerBlock.momBlock == null || !this.canDrop())
             {
                 this.spawnNeueBlock();

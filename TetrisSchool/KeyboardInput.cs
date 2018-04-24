@@ -14,6 +14,7 @@ namespace TetrisSchool
         public bool rightKeyPressed { get; set; }
         public bool leftKeyPressed { get; set; }
         public bool spaceKeyPressed { get; set; }
+        public bool escKeyPressed { get; set; }
 
         public KeyboardInput()
         {
@@ -21,6 +22,7 @@ namespace TetrisSchool
             downKeyPressed = false;
             rightKeyPressed = false;
             leftKeyPressed = false;
+            escKeyPressed = false;
         }
         public void evaluateKey(Keys key, Boolean pressed)
         {
@@ -43,6 +45,10 @@ namespace TetrisSchool
             else if (key == Keys.Space)
             {
                 spaceKeyPressed = pressed;
+            }
+            else if (key == Keys.Escape)
+            {
+                escKeyPressed = pressed;
             }
         }
     }
