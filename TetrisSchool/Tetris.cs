@@ -190,30 +190,30 @@ namespace TetrisSchool
 
         private void Tetris_KeyUp(object sender, KeyEventArgs e)
         {
-            if (playing)
-            {
-                if (input.spaceKeyPressed)
-                {
-                    board.lowerCurrentBlock();
-                }
-                if (input.leftKeyPressed)
-                {
-                    board.moveCurrentBlockLeft();
-                }
-                if (input.rightKeyPressed)
-                {
-                    board.moveCurrentBlockRight();
-                }
-                if (input.upKeyPressed)
-                {
-                    board.dreheMomBlockUhrzeiger();
-                }
-                if (input.downKeyPressed)
-                {
-                    board.dreheMomBlockGegenUhrzeiger();
-                }
-                this.updateGameBoard();
-            }     
+            //if (playing)
+            //{
+            //    if (input.spaceKeyPressed)
+            //    {
+            //        board.lowerCurrentBlock();
+            //    }
+            //    if (input.leftKeyPressed)
+            //    {
+            //        board.moveCurrentBlockLeft();
+            //    }
+            //    if (input.rightKeyPressed)
+            //    {
+            //        board.moveCurrentBlockRight();
+            //    }
+            //    if (input.upKeyPressed)
+            //    {
+            //        board.dreheMomBlockUhrzeiger();
+            //    }
+            //    if (input.downKeyPressed)
+            //    {
+            //        board.dreheMomBlockGegenUhrzeiger();
+            //    }
+            //    this.updateGameBoard();
+            //}     
             input.evaluateKey(e.KeyCode, false);
         }
 
@@ -227,12 +227,55 @@ namespace TetrisSchool
                     e.Handled = true;
                     this.updateGameBoard();
                 }
+                else if (input.upKeyPressed)
+                {
+                    board.dreheMomBlockUhrzeiger();
+                    e.Handled = true;
+                    this.updateGameBoard();
+                }
+                else if (input.downKeyPressed)
+                {
+                    board.dreheMomBlockGegenUhrzeiger();
+                    e.Handled = true;
+                    this.updateGameBoard();
+                }
+                else if (input.leftKeyPressed)
+                {
+                    board.moveCurrentBlockLeft();
+                    e.Handled = true;
+                    this.updateGameBoard();
+                }
+                else if (input.rightKeyPressed)
+                {
+                    board.moveCurrentBlockRight();
+                    e.Handled = true;
+                    this.updateGameBoard();
+                }
             }
         }
 
         private void Tetris_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Space && playing)
+            { input.evaluateKey(e.KeyCode, true);
+                e.Handled = true;
+            }
+            if (e.KeyCode == Keys.Up && playing)
+            {
+                input.evaluateKey(e.KeyCode, true);
+                e.Handled = true;
+            }
+            else if (e.KeyCode == Keys.Down && playing)
+            {
+                input.evaluateKey(e.KeyCode, true);
+                e.Handled = true;
+            }
+            else if (e.KeyCode == Keys.Left && playing)
+            {
+                input.evaluateKey(e.KeyCode, true);
+                e.Handled = true;
+            }
+            else if (e.KeyCode == Keys.Right && playing)
             {
                 input.evaluateKey(e.KeyCode, true);
                 e.Handled = true;
