@@ -19,8 +19,8 @@ namespace TetrisSchool
     {
         private bool playing { get; set; }
         private static int cellSize = 31;
-        private static int numRows = 18;
-        private static int numCols = 10;
+        private static int anzReihe = 18;
+        private static int anzSpalte = 10;
         private int baseTickInterval = 500;
         private int currentTickInterval;
         private int highScore;
@@ -51,15 +51,15 @@ namespace TetrisSchool
             }
             boardCells.Clear();
 
-            for ( int row = 0; row < numRows; row++)
+            for ( int reihe = 0; reihe < anzReihe; reihe++)
             {
-                for (int col = 0; col < numCols; col++)
+                for (int spalte = 0; spalte < anzSpalte; spalte++)
                 {
-                    Cell cell = new Cell(row, col);
+                    Cell cell = new Cell(reihe, spalte);
                     cell.Parent = gameGrid;
-                    cell.Top = row * cellSize;
-                    cell.Left = col * cellSize;
-                    boardCells.Add(cellKey(row, col), cell);
+                    cell.Top = reihe * cellSize;
+                    cell.Left = spalte * cellSize;
+                    boardCells.Add(cellKey(reihe, spalte), cell);
                 }
             }    
         }
@@ -101,7 +101,9 @@ namespace TetrisSchool
             {
                 buttonStart.Enabled = false;
                 if (!board.tick())
+                {
                     this.gameOver();
+                }
                 this.updateGameBoard();
                 this.updateTextFields();
                 //this.checkLevelUp();
@@ -139,9 +141,9 @@ namespace TetrisSchool
         private void updateGameBoard()
         {
             Cell cell;
-            for ( int row = 0; row < numRows; row++)
+            for ( int row = 0; row < anzReihe; row++)
             {
-                for (int col = 0; col < numCols; col++)
+                for (int col = 0; col < anzSpalte; col++)
                 {
                     boardCells.TryGetValue(cellKey(row, col), out cell);
                     cell.cellColor = board.grid[row, col];
@@ -154,7 +156,7 @@ namespace TetrisSchool
                 {
                     Coordinate c = new Coordinate(col, row);
                     c = block.toBoardCoord(c);
-                    if (block.momBlock[row, col] && c.x >= 0 && c.x < numCols && c.y < numRows)
+                    if (block.momBlock[row, col] && c.x >= 0 && c.x < anzSpalte && c.y < anzReihe)
                     {
                         boardCells.TryGetValue(cellKey(c.y, c.x), out cell);
 

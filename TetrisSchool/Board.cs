@@ -84,7 +84,7 @@ namespace TetrisSchool
         }
 
         public void lowerCurrentBlock()
-        {
+         {
             if (this.canDrop())
             {
                 this.momentanerBlock.y++;
