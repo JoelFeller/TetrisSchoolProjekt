@@ -61,11 +61,11 @@
             // labelGameOver
             // 
             this.labelGameOver.AutoSize = true;
-            this.labelGameOver.Font = new System.Drawing.Font("Microsoft YaHei UI", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGameOver.ForeColor = System.Drawing.Color.Crimson;
-            this.labelGameOver.Location = new System.Drawing.Point(0, 131);
+            this.labelGameOver.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGameOver.ForeColor = System.Drawing.Color.Red;
+            this.labelGameOver.Location = new System.Drawing.Point(3, 177);
             this.labelGameOver.Name = "labelGameOver";
-            this.labelGameOver.Size = new System.Drawing.Size(316, 70);
+            this.labelGameOver.Size = new System.Drawing.Size(291, 55);
             this.labelGameOver.TabIndex = 28;
             this.labelGameOver.Text = "YOU LOSE!";
             this.labelGameOver.Visible = false;
@@ -73,7 +73,7 @@
             // textBoxHighScore
             // 
             this.textBoxHighScore.Enabled = false;
-            this.textBoxHighScore.Location = new System.Drawing.Point(372, 400);
+            this.textBoxHighScore.Location = new System.Drawing.Point(352, 399);
             this.textBoxHighScore.Name = "textBoxHighScore";
             this.textBoxHighScore.ReadOnly = true;
             this.textBoxHighScore.Size = new System.Drawing.Size(100, 20);
@@ -83,27 +83,27 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(347, 380);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(327, 379);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 19);
+            this.label4.Size = new System.Drawing.Size(105, 16);
             this.label4.TabIndex = 22;
             this.label4.Text = "HIGH SCORE:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(347, 322);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(327, 321);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 19);
+            this.label2.Size = new System.Drawing.Size(154, 16);
             this.label2.TabIndex = 21;
             this.label2.Text = "ROWS COMPLETED:";
             // 
             // textBoxRowsCompleted
             // 
             this.textBoxRowsCompleted.Enabled = false;
-            this.textBoxRowsCompleted.Location = new System.Drawing.Point(372, 342);
+            this.textBoxRowsCompleted.Location = new System.Drawing.Point(352, 341);
             this.textBoxRowsCompleted.Name = "textBoxRowsCompleted";
             this.textBoxRowsCompleted.ReadOnly = true;
             this.textBoxRowsCompleted.Size = new System.Drawing.Size(100, 20);
@@ -113,10 +113,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(345, 264);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(325, 263);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 19);
+            this.label1.Size = new System.Drawing.Size(64, 16);
             this.label1.TabIndex = 19;
             this.label1.Text = "SCORE:";
             // 
@@ -124,7 +124,7 @@
             // 
             this.textBoxScore.CausesValidation = false;
             this.textBoxScore.Enabled = false;
-            this.textBoxScore.Location = new System.Drawing.Point(372, 284);
+            this.textBoxScore.Location = new System.Drawing.Point(352, 283);
             this.textBoxScore.Name = "textBoxScore";
             this.textBoxScore.ReadOnly = true;
             this.textBoxScore.Size = new System.Drawing.Size(100, 20);
@@ -135,8 +135,8 @@
             // 
             this.buttonStart.BackColor = System.Drawing.Color.ForestGreen;
             this.buttonStart.CausesValidation = false;
-            this.buttonStart.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonStart.Location = new System.Drawing.Point(351, 47);
+            this.buttonStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonStart.Location = new System.Drawing.Point(331, 47);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(121, 53);
             this.buttonStart.TabIndex = 26;
@@ -159,11 +159,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(478, 47);
             this.label3.MaximumSize = new System.Drawing.Size(425, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(413, 266);
+            this.label3.Size = new System.Drawing.Size(425, 256);
             this.label3.TabIndex = 28;
             this.label3.Text = resources.GetString("label3.Text");
             // 

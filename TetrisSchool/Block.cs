@@ -74,15 +74,15 @@ namespace TetrisSchool
                                                    { false, true, false, false } };
             ////
              ////
-            bool[,] linkerBlitz = new bool[4, 4] { {  true,  true, false, false }, 
+            bool[,] linkerBlitz = new bool[4, 4] { { false, false, false, false }, 
+                                                   {  true,  true, false, false }, 
                                                    { false,  true,  true, false }, 
-                                                   { false, false, false, false }, 
                                                    { false, false, false, false } };
                ////
             ////
-            bool[,] rechterBlitz = new bool[4, 4] { { false, false,  true,  true },
+            bool[,] rechterBlitz = new bool[4, 4] { { false, false, false, false },
+                                                    { false, false,  true,  true }, 
                                                     { false,  true,  true, false }, 
-                                                    { false, false, false, false }, 
                                                     { false, false, false, false } };
 
                //
@@ -143,7 +143,7 @@ namespace TetrisSchool
             Int32 hellblau = Convert.ToInt32("0xFF60CEFF", 16);
             Int32 schwarz = Convert.ToInt32("0xFF000000", 16);
 
-            Int32[] set = { hellblau, rot, gruen, violet, orange, blau, gelb, schwarz };
+            Int32[] set = { hellblau, rot, gruen, violet, blau, orange, gelb, schwarz };
 
             return set;
         }

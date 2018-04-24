@@ -132,7 +132,8 @@ ARROW KEY DOWN: Turns the Tetrominos counterclockwise(Gegenuhrzeiger)
 ARROW KEY LEFT/RIGHT: Moves the Tetrominos sideways.
 SPACEBAR: Lowers the Tetrominos
 
-START BUTTON / S: Starts a new game</value>
+START BUTTON / S: Starts a new game
+QUIT BUTTON / ESC: Quits the game</value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>39</value>

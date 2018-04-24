@@ -209,10 +209,6 @@ namespace TetrisSchool
                 {
                     board.dreheMomBlockGegenUhrzeiger();
                 }
-                if (input.escKeyPressed)
-                {
-                    Application.Exit();
-                }
                 this.updateGameBoard();
             }     
             input.evaluateKey(e.KeyCode, false);
@@ -249,9 +245,12 @@ namespace TetrisSchool
             switch (keyData)
             {
                 //case Keys.Home:
-                    //this.increaseGameLevel();
-                    //return true;
-                case (Keys.S):
+                //this.increaseGameLevel();
+                //return true;
+                case Keys.Escape:
+                    Application.Exit();
+                    return true;
+                case Keys.S:
                     this.reset();
                     return true;
                 case Keys.Left:
