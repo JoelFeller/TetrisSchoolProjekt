@@ -116,17 +116,20 @@ namespace TetrisSchool
                 this.momentanerBlock.x++;
             }
         }
-        
-        /// If possible, rotate the current block clockwise or counter clockwise
-        public void dreheMomBlock()
+        /// If possible, rotate the current block clockwise
+        public void dreheMomBlockUhrzeiger()
+        {
+            if (this.canRotate(true))
+            {
+                this.momentanerBlock.drehenUhrzeiger();
+            }
+        }
+        /// If possible, rotate the current block counter clockwise
+        public void dreheMomBlockGegenUhrzeiger()
         {
             if (this.canRotate(false))
             {
                 this.momentanerBlock.drehenGegenUhrzeiger();
-            }
-            else if(this.canRotate(true))
-            {
-                this.momentanerBlock.drehenUhrzeiger();
             }
         }
         
@@ -287,7 +290,7 @@ namespace TetrisSchool
         /// Gives the empty board its basic color
         private void colorCodeBoard()
         {
-            this.boardFarbe = Convert.ToInt32("FF4682B4", 16);
+            this.boardFarbe = Convert.ToInt32("FFFFFFFF", 16);
             for (int i = 0; i < anzReihe; i++)
             {
                 for (int j = 0; j < anzSpalte; j++)

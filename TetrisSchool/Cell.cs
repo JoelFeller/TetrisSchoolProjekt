@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Tetris
+namespace TetrisSchool
 {
     public partial class Cell : UserControl
     {

@@ -1,4 +1,4 @@
-﻿namespace Tetris
+﻿namespace TetrisSchool
 {
     partial class Cell
     {
