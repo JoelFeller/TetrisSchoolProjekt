@@ -16,6 +16,7 @@ namespace TetrisSchool
         //public int currentLevel { get; set; }
         public int score { get; set; }
         public Block momentanerBlock;
+        public Block alterBlock;
         public Coordinate coord;
 
         public Board()
@@ -51,8 +52,16 @@ namespace TetrisSchool
         private void spawnNeueBlock()
         {
             // put the last falling block in place
-            this.placeLastBlock();
-            this.momentanerBlock.holeNaechsterBlock();
+            //if (momentanerBlock == alterBlock)
+            //{
+                this.alterBlock = this.momentanerBlock;
+                //this.momentanerBlock.holeNaechsterBlock();
+            //}
+            //else
+            //{
+                this.placeLastBlock();
+                this.momentanerBlock.holeNaechsterBlock();
+            //}
         }
 
 
@@ -82,7 +91,6 @@ namespace TetrisSchool
             }
         }
         
-        /// Lock the last played block into position once it is done moving
         private void placeLastBlock()
         {
             if (momentanerBlock.momBlock != null)
@@ -304,6 +312,5 @@ namespace TetrisSchool
                 }
             }
         }
-
     }
 }
