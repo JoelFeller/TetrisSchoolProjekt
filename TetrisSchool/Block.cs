@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace TetrisSchool
 {
+    [Serializable]
     class Block
     {
         public int x { get; set; }

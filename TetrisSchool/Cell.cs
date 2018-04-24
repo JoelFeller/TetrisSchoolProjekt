@@ -12,15 +12,15 @@ namespace TetrisSchool
 {
     public partial class Cell : UserControl
     {
-        public int row { get; set; }
-        public int col { get; set; }
+        public int reihe { get; set; }
+        public int spalte { get; set; }
 
         public Cell(int row, int col)
         {
             InitializeComponent();
             this.Name = row.ToString() + ", " + col.ToString();
-            this.row = row;
-            this.col = col;
+            this.reihe = row;
+            this.spalte = col;
         }
 
         public int cellColor

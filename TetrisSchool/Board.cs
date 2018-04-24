@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace TetrisSchool
 {
+    [Serializable]
     class Board
     {
         private static int anzReihe = 18;
@@ -50,18 +51,9 @@ namespace TetrisSchool
 
         /// spawn the next Tetromino
         private void spawnNeueBlock()
-        {
-            // put the last falling block in place
-            //if (momentanerBlock == alterBlock)
-            //{
-                this.alterBlock = this.momentanerBlock;
-                //this.momentanerBlock.holeNaechsterBlock();
-            //}
-            //else
-            //{
+        { 
                 this.placeLastBlock();
                 this.momentanerBlock.holeNaechsterBlock();
-            //}
         }
 
 
@@ -98,13 +90,13 @@ namespace TetrisSchool
                 Coordinate c = null;
                 int dim = 4;
 
-                for (int row = 0; row < dim; row++)
+                for (int reihe = 0; reihe < dim; reihe++)
                 {
-                    for (int col = 0; col < dim; col++)
+                    for (int spalte = 0; spalte < dim; spalte++)
                     {
-                        if (momentanerBlock.momBlock[row, col])
+                        if (momentanerBlock.momBlock[reihe, spalte])
                         {
-                            c = momentanerBlock.toBoardCoord(new Coordinate(col, row));
+                            c = momentanerBlock.toBoardCoord(new Coordinate(spalte, reihe));
                             this.grid[c.y, c.x] = momentanerBlock.blockColor;
                         }
                     }
@@ -210,13 +202,13 @@ namespace TetrisSchool
             bool bewegbar = true;
             int dim = 4;
 
-            for (int row = 0; row < dim; row++)
+            for (int reihe = 0; reihe < dim; reihe++)
             {
-                for (int col = 0; col < dim; col++)
+                for (int spalte = 0; spalte < dim; spalte++)
                 {
-                    if (ablock.momBlock[row, col])
+                    if (ablock.momBlock[reihe, spalte])
                     {
-                        Coordinate c = ablock.toBoardCoord(new Coordinate(col, row));
+                        Coordinate c = ablock.toBoardCoord(new Coordinate(spalte, reihe));
                         if (isOccupiedCell(c) || c.x >= anzSpalte || c.x < 0 || c.y >= anzReihe)
                         {
                             bewegbar = false;
@@ -243,17 +235,17 @@ namespace TetrisSchool
             int anzVolleReihe = 0;
             //int rowPoints = this.currentLevel * 100;
             //int rowBonus = this.currentLevel * 50;
-            for (int row = 0; row < anzReihe; row++)
+            for (int reihe = 0; reihe < anzReihe; reihe++)
             {
-                if (this.istReiheVoll(row))
+                if (this.istReiheVoll(reihe))
                 {
-                    this.entferneReihe(row);
+                    this.entferneReihe(reihe);
                     anzVolleReihe++;
                 }
             }
             if (anzVolleReihe > 0)
             {
-                this.score += anzVolleReihe /** rowPoints*/ + ((anzVolleReihe - 1) /** rowBonus*/);
+                this.score += anzVolleReihe + (anzVolleReihe - 1);
                 this.updateRows(anzVolleReihe);
             }
         }
@@ -263,11 +255,11 @@ namespace TetrisSchool
             for (int i = 0; i < anzVolleReihe; i++)
             {
                 this.reiheBeendet++;
-                if (this.reiheBeendet % 10 == 0)
-                {
-                    //this.currentLevel++;
-
-                }
+                //if (this.reiheBeendet % 10 == 0)
+                //{
+                //    this.currentLevel++;
+                //
+                //}
             }
         }
 
@@ -292,9 +284,13 @@ namespace TetrisSchool
                 for (int spalte = 0; spalte < anzSpalte; spalte++)
                 {
                     if (reihe - 1 <= 0)
+                    {
                         this.grid[reihe, spalte] = this.boardFarbe;
+                    }
                     else
+                    {
                         this.grid[reihe, spalte] = this.grid[reihe - 1, spalte];
+                    }
                 }
             }
         }
