@@ -36,6 +36,8 @@ namespace TetrisSchool
             this.highScore = 0;
             this.textBoxHighScore.Text = this.highScore.ToString();
             this.currentTickInterval = this.baseTickInterval;
+            this.labelGameOver.Enabled = false;
+            this.labelGameOver.Visible = false;
             this.board = new Board();
             this.drawBackgroundBoard();
             this.KeyPreview = true;
@@ -170,6 +172,7 @@ namespace TetrisSchool
         private void gameOver()
         {
             buttonStart.Enabled = true;
+            labelGameOver.Enabled = true;
             labelGameOver.Visible = true;
             this.gameTick.Enabled = false;
             this.playing = false;
@@ -223,14 +226,17 @@ namespace TetrisSchool
                     board.lowerCurrentBlock();
                     e.Handled = true;
                     this.updateGameBoard();
-                }   
+                }
             }
         }
 
         private void Tetris_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Space && playing)
-                input.evaluateKey(e.KeyCode, true); e.Handled = true;
+            {
+                input.evaluateKey(e.KeyCode, true);
+                e.Handled = true;
+            }
         }
 
         //Keydown event for TAB, RETURN and ESC

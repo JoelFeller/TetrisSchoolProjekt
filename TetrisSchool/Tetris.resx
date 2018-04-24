@@ -120,7 +120,7 @@
   <metadata name="gameTick.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="label3.Text" xml:space="preserve">
+  <data name="labelInstructions.Text" xml:space="preserve">
     <value>INSTRUCTIONS:
 
 The main goal is to complete as much rows as you can while also getting the highest score!

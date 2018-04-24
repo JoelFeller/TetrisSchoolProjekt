@@ -34,14 +34,14 @@
             this.gameGrid = new System.Windows.Forms.Panel();
             this.labelGameOver = new System.Windows.Forms.Label();
             this.textBoxHighScore = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelHighscore = new System.Windows.Forms.Label();
+            this.labelReiheVoll = new System.Windows.Forms.Label();
             this.textBoxRowsCompleted = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelScore = new System.Windows.Forms.Label();
             this.textBoxScore = new System.Windows.Forms.TextBox();
             this.buttonStart = new System.Windows.Forms.Button();
             this.buttonQuit = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelInstructions = new System.Windows.Forms.Label();
             this.gameGrid.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +61,7 @@
             // labelGameOver
             // 
             this.labelGameOver.AutoSize = true;
+            this.labelGameOver.Enabled = false;
             this.labelGameOver.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelGameOver.ForeColor = System.Drawing.Color.Red;
             this.labelGameOver.Location = new System.Drawing.Point(3, 177);
@@ -80,25 +81,25 @@
             this.textBoxHighScore.TabIndex = 23;
             this.textBoxHighScore.TabStop = false;
             // 
-            // label4
+            // labelHighscore
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(327, 379);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 16);
-            this.label4.TabIndex = 22;
-            this.label4.Text = "HIGH SCORE:";
+            this.labelHighscore.AutoSize = true;
+            this.labelHighscore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHighscore.Location = new System.Drawing.Point(327, 379);
+            this.labelHighscore.Name = "labelHighscore";
+            this.labelHighscore.Size = new System.Drawing.Size(105, 16);
+            this.labelHighscore.TabIndex = 22;
+            this.labelHighscore.Text = "HIGH SCORE:";
             // 
-            // label2
+            // labelReiheVoll
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(327, 321);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(154, 16);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "ROWS COMPLETED:";
+            this.labelReiheVoll.AutoSize = true;
+            this.labelReiheVoll.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelReiheVoll.Location = new System.Drawing.Point(327, 321);
+            this.labelReiheVoll.Name = "labelReiheVoll";
+            this.labelReiheVoll.Size = new System.Drawing.Size(154, 16);
+            this.labelReiheVoll.TabIndex = 21;
+            this.labelReiheVoll.Text = "ROWS COMPLETED:";
             // 
             // textBoxRowsCompleted
             // 
@@ -110,15 +111,15 @@
             this.textBoxRowsCompleted.TabIndex = 20;
             this.textBoxRowsCompleted.TabStop = false;
             // 
-            // label1
+            // labelScore
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(325, 263);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 16);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "SCORE:";
+            this.labelScore.AutoSize = true;
+            this.labelScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelScore.Location = new System.Drawing.Point(325, 263);
+            this.labelScore.Name = "labelScore";
+            this.labelScore.Size = new System.Drawing.Size(64, 16);
+            this.labelScore.TabIndex = 19;
+            this.labelScore.Text = "SCORE:";
             // 
             // textBoxScore
             // 
@@ -156,17 +157,17 @@
             this.buttonQuit.UseVisualStyleBackColor = false;
             this.buttonQuit.Click += new System.EventHandler(this.buttonQuit_Click);
             // 
-            // label3
+            // labelInstructions
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(478, 47);
-            this.label3.MaximumSize = new System.Drawing.Size(425, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(425, 256);
-            this.label3.TabIndex = 28;
-            this.label3.Text = resources.GetString("label3.Text");
+            this.labelInstructions.AutoSize = true;
+            this.labelInstructions.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.labelInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInstructions.Location = new System.Drawing.Point(478, 47);
+            this.labelInstructions.MaximumSize = new System.Drawing.Size(425, 0);
+            this.labelInstructions.Name = "labelInstructions";
+            this.labelInstructions.Size = new System.Drawing.Size(425, 256);
+            this.labelInstructions.TabIndex = 28;
+            this.labelInstructions.Text = resources.GetString("labelInstructions.Text");
             // 
             // Tetris
             // 
@@ -174,14 +175,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(907, 617);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelInstructions);
             this.Controls.Add(this.buttonQuit);
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.textBoxHighScore);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelHighscore);
+            this.Controls.Add(this.labelReiheVoll);
             this.Controls.Add(this.textBoxRowsCompleted);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelScore);
             this.Controls.Add(this.textBoxScore);
             this.Controls.Add(this.gameGrid);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -202,15 +203,15 @@
         private System.Windows.Forms.Timer gameTick;
         private System.Windows.Forms.Panel gameGrid;
         private System.Windows.Forms.TextBox textBoxHighScore;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelHighscore;
+        private System.Windows.Forms.Label labelReiheVoll;
         private System.Windows.Forms.TextBox textBoxRowsCompleted;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelScore;
         private System.Windows.Forms.TextBox textBoxScore;
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.Button buttonQuit;
         private System.Windows.Forms.Label labelGameOver;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelInstructions;
     }
 }
 
