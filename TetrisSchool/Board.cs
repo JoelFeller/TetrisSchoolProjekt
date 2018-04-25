@@ -112,7 +112,7 @@ namespace TetrisSchool
         }
         
         /// Move the current block left if possible
-        public void moveCurrentBlockLeft()
+        public void bewegeMomBlockLinks()
         {
             if (this.canMoveSideWays(true))
             {
@@ -121,7 +121,7 @@ namespace TetrisSchool
         }
         
         /// Moves the current block right if possible
-        public void moveCurrentBlockRight()
+        public void bewegeMomBlockRechts()
         {
             if (this.canMoveSideWays(false))
             {
@@ -194,7 +194,7 @@ namespace TetrisSchool
             return drehbar;
         }
         
-        /// Returns true if the current block can drop one row down else false
+        /// Returns true if the current block can still go deeper else false
         private bool canDrop()
         {
             bool canDrop = true;
@@ -207,8 +207,9 @@ namespace TetrisSchool
             }
             return canDrop;
         }
-        
-        /// Returns true if the current block is allowed to make its next move else false
+
+        /// Returns true if the current block is still moveable else false
+        /// Return true wenn der Teil noch bewegbar ist sonst false
         private bool canBeThere(Block ablock)
         {
             bool bewegbar = true;
@@ -231,7 +232,7 @@ namespace TetrisSchool
             return bewegbar;
         }
         
-        /// Returns true if a cell is occupied otherwise false
+        /// Returns true if a cell is already there otherwise false
         private bool isOccupiedCell(Coordinate c)
         {
             if (c.x < anzSpalte && c.x >= 0 && c.y < anzReihe && c.y >= 0 && this.grid[c.y, c.x] == this.boardFarbe)
@@ -241,7 +242,7 @@ namespace TetrisSchool
             return true;
         }
         
-        /// Check all the board rows for full rows
+        /// Checks every single board row if there are full rows
         private void checkFullRows()
         {
             int anzVolleReihe = 0;
@@ -306,9 +307,10 @@ namespace TetrisSchool
                 }
             }
         }
-        
-        /// Kind of like a hint that the game has started
-        /// Gives the empty board its basic color
+
+
+        /// Gives the deactivated board a color
+        /// " It looks like it turned on"
         private void colorCodeBoard()
         {
             this.boardFarbe = Convert.ToInt32("FFFFFFFF", 16);

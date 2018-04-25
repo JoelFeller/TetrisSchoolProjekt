@@ -53,7 +53,7 @@
             // gameGrid
             // 
             this.gameGrid.Controls.Add(this.labelGameOver);
-            this.gameGrid.Location = new System.Drawing.Point(12, 47);
+            this.gameGrid.Location = new System.Drawing.Point(9, 12);
             this.gameGrid.Name = "gameGrid";
             this.gameGrid.Size = new System.Drawing.Size(310, 558);
             this.gameGrid.TabIndex = 8;
@@ -74,7 +74,7 @@
             // textBoxHighScore
             // 
             this.textBoxHighScore.Enabled = false;
-            this.textBoxHighScore.Location = new System.Drawing.Point(352, 399);
+            this.textBoxHighScore.Location = new System.Drawing.Point(351, 404);
             this.textBoxHighScore.Name = "textBoxHighScore";
             this.textBoxHighScore.ReadOnly = true;
             this.textBoxHighScore.Size = new System.Drawing.Size(100, 20);
@@ -85,7 +85,7 @@
             // 
             this.labelHighscore.AutoSize = true;
             this.labelHighscore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHighscore.Location = new System.Drawing.Point(327, 379);
+            this.labelHighscore.Location = new System.Drawing.Point(326, 384);
             this.labelHighscore.Name = "labelHighscore";
             this.labelHighscore.Size = new System.Drawing.Size(105, 16);
             this.labelHighscore.TabIndex = 22;
@@ -95,16 +95,16 @@
             // 
             this.labelReiheVoll.AutoSize = true;
             this.labelReiheVoll.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelReiheVoll.Location = new System.Drawing.Point(327, 321);
+            this.labelReiheVoll.Location = new System.Drawing.Point(326, 326);
             this.labelReiheVoll.Name = "labelReiheVoll";
             this.labelReiheVoll.Size = new System.Drawing.Size(154, 16);
             this.labelReiheVoll.TabIndex = 21;
-            this.labelReiheVoll.Text = "ROWS COMPLETED:";
+            this.labelReiheVoll.Text = "ENTFERNTE REIHE:";
             // 
             // textBoxRowsCompleted
             // 
             this.textBoxRowsCompleted.Enabled = false;
-            this.textBoxRowsCompleted.Location = new System.Drawing.Point(352, 341);
+            this.textBoxRowsCompleted.Location = new System.Drawing.Point(351, 346);
             this.textBoxRowsCompleted.Name = "textBoxRowsCompleted";
             this.textBoxRowsCompleted.ReadOnly = true;
             this.textBoxRowsCompleted.Size = new System.Drawing.Size(100, 20);
@@ -115,17 +115,17 @@
             // 
             this.labelScore.AutoSize = true;
             this.labelScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelScore.Location = new System.Drawing.Point(325, 263);
+            this.labelScore.Location = new System.Drawing.Point(324, 268);
             this.labelScore.Name = "labelScore";
-            this.labelScore.Size = new System.Drawing.Size(64, 16);
+            this.labelScore.Size = new System.Drawing.Size(73, 16);
             this.labelScore.TabIndex = 19;
-            this.labelScore.Text = "SCORE:";
+            this.labelScore.Text = "PUNKTE:";
             // 
             // textBoxScore
             // 
             this.textBoxScore.CausesValidation = false;
             this.textBoxScore.Enabled = false;
-            this.textBoxScore.Location = new System.Drawing.Point(352, 283);
+            this.textBoxScore.Location = new System.Drawing.Point(351, 288);
             this.textBoxScore.Name = "textBoxScore";
             this.textBoxScore.ReadOnly = true;
             this.textBoxScore.Size = new System.Drawing.Size(100, 20);
@@ -137,7 +137,7 @@
             this.buttonStart.BackColor = System.Drawing.Color.ForestGreen;
             this.buttonStart.CausesValidation = false;
             this.buttonStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonStart.Location = new System.Drawing.Point(331, 47);
+            this.buttonStart.Location = new System.Drawing.Point(330, 12);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(121, 53);
             this.buttonStart.TabIndex = 26;
@@ -149,7 +149,7 @@
             // buttonQuit
             // 
             this.buttonQuit.BackColor = System.Drawing.Color.Red;
-            this.buttonQuit.Location = new System.Drawing.Point(349, 552);
+            this.buttonQuit.Location = new System.Drawing.Point(330, 517);
             this.buttonQuit.Name = "buttonQuit";
             this.buttonQuit.Size = new System.Drawing.Size(121, 53);
             this.buttonQuit.TabIndex = 27;
@@ -162,7 +162,7 @@
             this.labelInstructions.AutoSize = true;
             this.labelInstructions.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.labelInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInstructions.Location = new System.Drawing.Point(478, 47);
+            this.labelInstructions.Location = new System.Drawing.Point(470, 12);
             this.labelInstructions.MaximumSize = new System.Drawing.Size(425, 0);
             this.labelInstructions.Name = "labelInstructions";
             this.labelInstructions.Size = new System.Drawing.Size(425, 256);
@@ -174,7 +174,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(907, 617);
+            this.ClientSize = new System.Drawing.Size(907, 580);
             this.Controls.Add(this.labelInstructions);
             this.Controls.Add(this.buttonQuit);
             this.Controls.Add(this.buttonStart);

@@ -198,11 +198,11 @@ namespace TetrisSchool
                 }
                 if (input.leftKeyPressed)
                 {
-                    board.moveCurrentBlockLeft();
+                    board.bewegeMomBlockLinks();
                 }
                 if (input.rightKeyPressed)
                 {
-                    board.moveCurrentBlockRight();
+                    board.bewegeMomBlockRechts();
                 }
                 if (input.upKeyPressed)
                 {
@@ -241,13 +241,13 @@ namespace TetrisSchool
                 }
                 else if (input.leftKeyPressed)
                 {
-                    board.moveCurrentBlockLeft();
+                    board.bewegeMomBlockLinks();
                     e.Handled = true;
                     this.updateGameBoard();
                 }
                 else if (input.rightKeyPressed)
                 {
-                    board.moveCurrentBlockRight();
+                    board.bewegeMomBlockRechts();
                     e.Handled = true;
                     this.updateGameBoard();
                 }
