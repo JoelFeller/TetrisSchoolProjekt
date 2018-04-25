@@ -190,30 +190,30 @@ namespace TetrisSchool
 
         private void Tetris_KeyUp(object sender, KeyEventArgs e)
         {
-            //if (playing)
-            //{
-            //    if (input.spaceKeyPressed)
-            //    {
-            //        board.lowerCurrentBlock();
-            //    }
-            //    if (input.leftKeyPressed)
-            //    {
-            //        board.moveCurrentBlockLeft();
-            //    }
-            //    if (input.rightKeyPressed)
-            //    {
-            //        board.moveCurrentBlockRight();
-            //    }
-            //    if (input.upKeyPressed)
-            //    {
-            //        board.dreheMomBlockUhrzeiger();
-            //    }
-            //    if (input.downKeyPressed)
-            //    {
-            //        board.dreheMomBlockGegenUhrzeiger();
-            //    }
-            //    this.updateGameBoard();
-            //}     
+            if (playing)
+            {
+                if (input.spaceKeyPressed)
+                {
+                    board.lowerCurrentBlock();
+                }
+                if (input.leftKeyPressed)
+                {
+                    board.moveCurrentBlockLeft();
+                }
+                if (input.rightKeyPressed)
+                {
+                    board.moveCurrentBlockRight();
+                }
+                if (input.upKeyPressed)
+                {
+                    board.dreheMomBlockUhrzeiger();
+                }
+                if (input.downKeyPressed)
+                {
+                    board.dreheMomBlockGegenUhrzeiger();
+                }
+                this.updateGameBoard();
+            }     
             input.evaluateKey(e.KeyCode, false);
         }
 
@@ -260,26 +260,6 @@ namespace TetrisSchool
             { input.evaluateKey(e.KeyCode, true);
                 e.Handled = true;
             }
-            if (e.KeyCode == Keys.Up && playing)
-            {
-                input.evaluateKey(e.KeyCode, true);
-                e.Handled = true;
-            }
-            else if (e.KeyCode == Keys.Down && playing)
-            {
-                input.evaluateKey(e.KeyCode, true);
-                e.Handled = true;
-            }
-            else if (e.KeyCode == Keys.Left && playing)
-            {
-                input.evaluateKey(e.KeyCode, true);
-                e.Handled = true;
-            }
-            else if (e.KeyCode == Keys.Right && playing)
-            {
-                input.evaluateKey(e.KeyCode, true);
-                e.Handled = true;
-            }
         }
 
         //Keydown event for TAB, RETURN and ESC
@@ -298,9 +278,6 @@ namespace TetrisSchool
                 //return true;
                 case Keys.Escape:
                     Application.Exit();
-                    return true;
-                case Keys.S:
-                    this.reset();
                     return true;
                 case Keys.Left:
                 case Keys.Right:

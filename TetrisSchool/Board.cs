@@ -19,6 +19,7 @@ namespace TetrisSchool
         public Block momentanerBlock;
         public Block alterBlock;
         public Coordinate coord;
+        public bool istTNT;
 
         public Board()
         {
@@ -99,6 +100,12 @@ namespace TetrisSchool
                             c = momentanerBlock.toBoardCoord(new Coordinate(spalte, reihe));
                             this.grid[c.y, c.x] = momentanerBlock.blockColor;
                         }
+
+                        //tnt block part
+                        if (momentanerBlock.momBlock == momentanerBlock.blockConfig[7])
+                        {
+                            entferneReihe(reihe);
+                        }
                     }
                 }
             }
@@ -163,6 +170,11 @@ namespace TetrisSchool
         private bool canRotate(bool uhrzeiger)
         {
             bool drehbar = true;
+            //if block is tnt
+            if(momentanerBlock.momBlock == momentanerBlock.blockConfig[7] || momentanerBlock.momBlock == momentanerBlock.blockConfig[6])
+            {
+                drehbar = false;
+            }
             Block whenRotated = momentanerBlock.Clone();
 
             if (uhrzeiger)

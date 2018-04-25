@@ -17,4 +17,3 @@ C:\TetrisSchoolProjekt\TetrisSchool\obj\Debug\TetrisSchool.csproj.GenerateResour
 C:\TetrisSchoolProjekt\TetrisSchool\obj\Debug\TetrisSchool.exe
 C:\TetrisSchoolProjekt\TetrisSchool\obj\Debug\TetrisSchool.pdb
 C:\TetrisSchoolProjekt\TetrisSchool\obj\Debug\TetrisSchool.Cell.resources
-C:\TetrisSchoolProjekt\TetrisSchool\obj\Debug\TetrisSchool.csproj.CoreCompileInputs.cache
