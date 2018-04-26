@@ -41,6 +41,7 @@ namespace TetrisSchool
             //}
             if (this.momentanerBlock.momBlock == null || !this.canDrop())
             {
+                this.tntMechanismus();
                 this.spawnNeueBlock();
                 return this.isFirstMovePossible();
             }
@@ -258,7 +259,7 @@ namespace TetrisSchool
             }
             if (anzVolleReihe > 0)
             {
-                this.score += anzVolleReihe + (anzVolleReihe - 1);
+                this.score += anzVolleReihe * 100;
                 this.updateRows(anzVolleReihe);
             }
         }
@@ -320,6 +321,22 @@ namespace TetrisSchool
                 {
                     grid[i, j] = this.boardFarbe;
                 }
+            }
+        }
+
+        private void tntMechanismus()
+        {
+            if(momentanerBlock.momBlock == momentanerBlock.blockConfig[7])
+            {
+                for (int reihe = 0; reihe < anzReihe; reihe++)
+                {
+                    if (!canDrop())
+                    {
+                        this.entferneReihe(reihe);
+                        //anzVolleReihe++;
+                    }
+                }
+
             }
         }
     }
